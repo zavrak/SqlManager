@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "HealtCheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>HealtCheck</h1>
+<hr />
+<div class="row">
+    <div class="col">
+        <ul>
+            @foreach (var item in Model)
+            {
+              <li>
+                  <b>@item.Title</b>
+                  @Html.ActionLink("Details","Details","Home",new {Id = item.Id })
+
+              </li>
+            }
+        </ul>
+    </div>
+</div>

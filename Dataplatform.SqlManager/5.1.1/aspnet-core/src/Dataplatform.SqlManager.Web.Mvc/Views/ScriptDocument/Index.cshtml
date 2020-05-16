@@ -1,0 +1,46 @@
+﻿@using Abp.Authorization.Users
+@using Dataplatform.SqlManager.Web.Startup
+@model Dataplatform.SqlManager.Web.Models.ScriptDocument.ScriptDocumentListViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.ScriptDocument; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Users/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Users/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+@{
+    ViewBag.Title = L("ScriptDocument");
+    ViewBag.ActiveMenu = "ScriptDocument"; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
+}
+
+<h2>@L("ScriptDocument")</h2>
+
+<div class="row">
+    <div>
+        <ul class="list-group" id="ScriptDocumentList">
+            @foreach (var document in Model.ScriptDocuments)
+            {
+                <li class="list-group-item">
+                    <span class="pull-right label @Model.GetTaskLabel(document)">@L($"TaskState_{document.ScriptType}")</span>
+                    <h4 class="list-group-item-heading">@document.Title</h4>
+                    <div class="list-group-item-text">
+                        @document.CreationTime.ToString("yyyy-MM-dd HH:mm:ss")
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="modal fade" id="UserEditModal" tabindex="-1" role="dialog" aria-labelledby="UserEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

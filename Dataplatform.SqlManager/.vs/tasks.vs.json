@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-DataModel2",
+      "appliesTo": "Dataplatform.SQLManager.Web/DataModel2/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-DataModel2",
+      "appliesTo": "Dataplatform.SQLManager.Web/DataModel2/",
+      "type": "launch"
+    }
+  ]
+}

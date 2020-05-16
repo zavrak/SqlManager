@@ -1,0 +1,70 @@
+﻿@model Dataplatform.SQLManager.Web.DataModels.Script
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Edit Script</h3>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ScriptType" class="control-label"></label>
+                <input asp-for="ScriptType" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="ScriptType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptText" class="control-label"></label>
+                <textarea asp-for="ScriptText" class="md-textarea form-control" style="height:950px ;resize:none; font-size:small; background-color:ghostwhite" ></textarea>
+                <span asp-validation-for="ScriptText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Keyword" class="control-label"></label>
+                <input asp-for="Keyword" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="Keyword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptGuid" class="control-label"></label>
+                <input asp-for="ScriptGuid" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="ScriptGuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsActive" class="control-label"></label>
+                <input asp-for="IsActive" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SqlVersion" class="control-label"></label>
+                <input asp-for="SqlVersion" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="SqlVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlwaysOnActive" class="control-label"></label>
+                <input asp-for="AlwaysOnActive" class="form-control" style="background-color:ghostwhite" />
+                <span asp-validation-for="AlwaysOnActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

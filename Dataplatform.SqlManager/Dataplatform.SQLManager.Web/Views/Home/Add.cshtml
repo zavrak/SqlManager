@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+@model Dataplatform.SQLManager.Web.DataModels.Script
+<div class="row">
+    <div class="col">
+        @using (Html.BeginForm("Add", "Home", FormMethod.Post))
+        {
+            <h3> Add Script</h3>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <hr />
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ScriptType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ScriptType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ScriptType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2 " })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control " } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ScriptText, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.ScriptText, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ScriptText, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Keyword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Keyword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Keyword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SqlVersion, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SqlVersion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SqlVersion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AlwaysOnActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AlwaysOnActive, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AlwaysOnActive)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" value="Save" class="btn btn-success">Save</button>
+
+                </div>
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+
+        }
+    </div>
+    </div>
+            <style>
+
+                label {
+                    font: .8em,bold;
+                }
+
+                textarea {
+                    font: 1.4em/1.5em;
+                    background-color: ghostwhite;
+                    padding: 20px;
+                    margin: 0;
+                    width: 80%;
+                    resize: none;
+                    width: 900px;
+                    height: 600px;
+                }
+                input {
+                    background-color:ghostwhite;
+                }
+            </style>
+
+       
+
+      
+<div class="col">
+
+</div>
+
+
+

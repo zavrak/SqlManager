@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "AlwaysOn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AlwaysOn</h1>
+<hr />
+<div class="row">
+    <div class="col">
+        <ul>
+            @foreach(var item in Model)
+            {
+                <li>
+                    <b> @item.Title </b>
+                    @Html.ActionLink("Details","Details","Home", new { Id = item.Id })
+                </li>
+            }
+        </ul>
+
+    </div>
+
+    <div class="col">
+
+    </div>
+
+</div>
+
